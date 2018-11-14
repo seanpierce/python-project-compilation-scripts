@@ -1,26 +1,24 @@
 import os
 
-from colorama import init
-from colorama import Fore, Back, Style
-init()
+from colors import green, yellow, red
 
 # declare file paths
 AvellaSourceB_path = r"C:\Sites\Avella-SourceB\Avella_SourceB\App"
 
-print(f'{Fore.GREEN}Get your compile on!{Style.RESET_ALL}')
+print(f'{green("Get your compile on!")}')
 
 while True:
     print("--------------------")
-    print(f'{Fore.YELLOW}[1]{Style.RESET_ALL} Avella - SourceB')
-    print(f'{Fore.YELLOW}[2]{Style.RESET_ALL} SonoraQuest')
+    print(f'{yellow("[1]")} Avella - SourceB')
+    print(f'{yellow("[2]")} SonoraQuest')
 
     project = int(input("What project would you like to compile? "))
 
     if project == 1:
-        print(f'{Fore.GREEN}Compiling: Avella - SourceB...{Style.RESET_ALL}')
+        print(f'{green("Compiling: Avella - SourceB...")}')
         os.chdir(AvellaSourceB_path)
         os.system("gulp")
         break
     elif project != 1:
-        print(f'{Fore.RED}That command is unavailable at this time.{Style.RESET_ALL}')
+        print(f'{red("That command is unavailable at this time.")}')
         continue
