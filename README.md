@@ -11,5 +11,5 @@ A simple Python app that I use to compile my front-end projects at work.
 ### Optional
 
 It's helpful to create a shell alias that points toward the `compile.py` file.
-Append the alias to your `.bashrc` file by running `echo "alias compile=\"cd path/to/compile.py && python compile.py\"" >> ~/.bashrc`.
-Restart your shell. Now, running `compile` from anywhere will run this program!
+Append the alias to your `.bashrc` file by running `$ echo "alias compile=\"cd path/to/compile.py && python compile.py\"" >> ~/.bashrc`.
+Restart your shell. Now, running `$ compile` from anywhere will run this program!
