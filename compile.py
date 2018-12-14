@@ -2,23 +2,26 @@ import os
 
 from colors import green, yellow, red
 
-# declare file paths
-AvellaSourceB_path = r"C:\Sites\Avella-SourceB\Avella_SourceB\App"
+# secrets contains a list of Project objects
+from secrets import projects
 
-print(f'{green("Get your compile on!")}')
+print(f'{green("Compile a Project!")}')
 
 while True:
     print("--------------------")
-    print(f'{yellow("[1]")} Avella - SourceB')
-    print(f'{yellow("[2]")} SonoraQuest')
 
-    project = int(input("What project would you like to compile? "))
+    for project in projects:
+        print(f'{yellow(f"[{project.number}]")} {project.name}')
 
-    if project == 1:
-        print(f'{green("Compiling: Avella - SourceB...")}')
-        os.chdir(AvellaSourceB_path)
-        os.system("gulp")
-        break
-    elif project != 1:
-        print(f'{red("That command is unavailable at this time.")}')
+    project_id = int(input("What project would you like to compile? "))
+
+    selected_project = next(
+        (x for x in projects if x.number == project_id), None)
+
+    if selected_project == None:
+        print(f'{red(f"Error: {project_id} is not an option.")}')
         continue
+
+    print(f'{green(f"Compiling: {selected_project.name}...")}')
+    os.chdir(selected_project.path)
+    os.system(selected_project.command)
