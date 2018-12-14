@@ -1,11 +1,15 @@
-# Useful Python Scripts
+# Python Project Compilation Scripts
 
-_It's exactly what it sounds like..._
+A simple Python app that I use to compile my front-end projects at work.
 
--   Each script is paired with an alias created in the `~/.bashrc` file
--   Each script can be executed directly from the terminal using their respective alias
-    -   example: `$ compile`
+### Usage
 
-| Alias   | Script       | ~/.bashrc                                              |
-| :------ | :----------- | :----------------------------------------------------- |
-| compile | `compile.py` | `alias="cd ~/../../shellscripts && python compile.py"` |
+-   Rename the `secrets.example.py` file to `secrets.py`
+-   Replace the placeholder info with actual info relevant to your projects
+-   From the repo's root, run `$ python compile.py`
+
+### Optional
+
+It's helpful to create a shell alias that points toward the `compile.py` file.
+Append the alias to your `.bashrc` file by running `echo "alias compile=\"cd path/to/compile.py && python compile.py\"" >> ~/.bashrc`.
+Restart your shell. Now, running `compile` from anywhere run this program!
